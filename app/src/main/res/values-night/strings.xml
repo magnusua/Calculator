@@ -1,5 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Calculator</string>
     <string name="editText_phone_number">editText</string>
     <string name="editText_date">editTextAnother</string>
 </resources>
