@@ -7,15 +7,9 @@
     android:background="@drawable/background"
     tools:context=".MainActivity">
 
-    <include
-        layout="@layout/keyboard_table"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="194dp"
-        tools:visibility="visible" />
+<!--Grid layout - лучший макет для размещения кнопок калькулятора,
+ позволяет делать кнопки разной длинны и ширины размещая
+ их по заданной сетке.-->
 
     <include
         layout="@layout/keyboard_grid"
@@ -25,7 +19,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="554dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="320dp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
