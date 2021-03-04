@@ -12,8 +12,9 @@
         android:id="@+id/buttonSqrt"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_row="0"
-        android:layout_column="0"
+
+        android:layout_row="5"
+        android:layout_column="1"
         android:text="@string/buttonSqrt"
         android:textSize="@dimen/key_text_size" />
 
@@ -137,11 +138,11 @@
         android:textSize="@dimen/key_text_size" />
 
     <Button
-        android:id="@+id/button00"
-        android:layout_row="5"
-        android:layout_column="1"
+        android:id="@+id/buttonCE"
+        android:layout_row="0"
+        android:layout_column="0"
         android:layout_marginStart="2dp"
-        android:text="@string/button00"
+        android:text="@string/buttonCE"
         android:textSize="@dimen/key_text_size" />
 
     <Button
@@ -159,7 +160,6 @@
         android:layout_column="3"
         android:layout_gravity="fill"
         android:layout_marginStart="2dp"
-        android:background="#A54949"
         android:text="@string/buttonResult"
         android:textSize="@dimen/key_text_size" />
 

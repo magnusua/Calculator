@@ -7,20 +7,31 @@
     android:background="@drawable/background"
     tools:context=".MainActivity">
 
+
+
     <TextView
-        android:id="@+id/displayOperationNumber"
-        android:layout_width="match_parent"
-        android:layout_height="167dp"
-        android:layout_gravity="center_vertical"
-        android:layout_marginEnd="4dp"
-        android:hint="..."
-        android:maxLines="1"
-        android:onClick="clickOperationsDisplay"
-        android:textColor="#757575"
-        android:textColorHint="#616161"
-        android:textSize="35sp"
+        android:id="@+id/input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="68sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="192dp" />
+        app:layout_constraintHorizontal_bias="0.909"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.252" />
+
+    <TextView
+        android:id="@+id/output"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.909"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.051" />
 
     <include
         layout="@layout/keyboard_grid"
