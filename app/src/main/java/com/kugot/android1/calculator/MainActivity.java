@@ -10,8 +10,33 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import static com.kugot.android1.calculator.R.*;
-import static com.kugot.android1.calculator.R.id.*;
+import java.util.Objects;
+
+import static com.kugot.android1.calculator.R.id.button0;
+import static com.kugot.android1.calculator.R.id.button1;
+import static com.kugot.android1.calculator.R.id.button2;
+import static com.kugot.android1.calculator.R.id.button3;
+import static com.kugot.android1.calculator.R.id.button4;
+import static com.kugot.android1.calculator.R.id.button5;
+import static com.kugot.android1.calculator.R.id.button6;
+import static com.kugot.android1.calculator.R.id.button7;
+import static com.kugot.android1.calculator.R.id.button8;
+import static com.kugot.android1.calculator.R.id.button9;
+import static com.kugot.android1.calculator.R.id.buttonCE;
+import static com.kugot.android1.calculator.R.id.buttonDelimiter;
+import static com.kugot.android1.calculator.R.id.buttonLeftBracket;
+import static com.kugot.android1.calculator.R.id.buttonMinus;
+import static com.kugot.android1.calculator.R.id.buttonMultiply;
+import static com.kugot.android1.calculator.R.id.buttonP;
+import static com.kugot.android1.calculator.R.id.buttonPlus;
+import static com.kugot.android1.calculator.R.id.buttonPlusMinus;
+import static com.kugot.android1.calculator.R.id.buttonResult;
+import static com.kugot.android1.calculator.R.id.buttonRightBracket;
+import static com.kugot.android1.calculator.R.id.buttonSqrt;
+import static com.kugot.android1.calculator.R.id.buttonSquare;
+import static com.kugot.android1.calculator.R.id.input;
+import static com.kugot.android1.calculator.R.id.output;
+import static com.kugot.android1.calculator.R.layout;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -69,11 +94,10 @@ public class MainActivity extends AppCompatActivity {
         setNumericListener();
         setOnClickListener();
 
-
     }
 
 
-    private void addCharToParam(String key) {
+    private void addCharToParam(char key) {
         ifErrorOnOutput();
         exceedLength();
         mTextView1.setText(mTextView1.getText().toString() + key);
@@ -160,43 +184,43 @@ public class MainActivity extends AppCompatActivity {
     private final View.OnClickListener keyNumericClickListener = (view) -> {
         switch (view.getId()) {
             case button0: {
-                addCharToParam("0");
+                addCharToParam('0');
                 break;
             }
             case button1: {
-                addCharToParam("1");
+                addCharToParam('1');
                 break;
             }
             case button2: {
-                addCharToParam("2");
+                addCharToParam('2');
                 break;
             }
             case button3: {
-                addCharToParam("3");
+                addCharToParam('3');
                 break;
             }
             case button4: {
-                addCharToParam("4");
+                addCharToParam('4');
                 break;
             }
             case button5: {
-                addCharToParam("5");
+                addCharToParam('5');
                 break;
             }
             case button6: {
-                addCharToParam("6");
+                addCharToParam('6');
                 break;
             }
             case button7: {
-                addCharToParam("7");
+                addCharToParam('7');
                 break;
             }
             case button8: {
-                addCharToParam("8");
+                addCharToParam('8');
                 break;
             }
             case button9: {
-                addCharToParam("9");
+                addCharToParam('9');
                 break;
             }
             default: {
@@ -237,48 +261,49 @@ public class MainActivity extends AppCompatActivity {
     private final View.OnClickListener keyOperationClickListener = (view) -> {
         switch (view.getId()) {
             case buttonLeftBracket: {
-                addCharToParam("(");
+                addCharToParam('(');
                 break;
             }
             case buttonRightBracket: {
-                addCharToParam(")");
+                addCharToParam(')');
                 break;
             }
             case buttonDelimiter: {
-                addCharToParam("/");
+                addCharToParam('/');
                 break;
             }
             case buttonMultiply: {
-                addCharToParam("*");
+                addCharToParam('*');
                 break;
             }
             case buttonPlus: {
-                addCharToParam("+");
+                addCharToParam('+');
                 break;
             }
             case buttonMinus: {
-                addCharToParam("-");
+                addCharToParam('-');
                 break;
             }
             //далее необходимо будет обработать в дальнейшем
             case buttonCE: {
                 mTextView1.setText("");
+
                 break;
             }
             case buttonP: {
-                addCharToParam(".");
+                addCharToParam('.');
                 break;
             }
             case buttonPlusMinus: {
-                mTextView1.setText("-" + mTextView1.getText().toString());
+                plusMinusButton();
                 break;
             }
             case buttonSqrt: {
-                addCharToParam("^");
+                addCharToParam('^');
                 break;
             }
             case buttonSquare: {
-                addCharToParam("^2");
+                addCharToParam('²');
                 break;
             }
 
@@ -288,6 +313,14 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    //plusMinus
+    private void plusMinusButton() {
+        if (mTextView1.getText().length() > 0 && !Objects.equals(mTextView1.getText().charAt(0), '-')) {
+            mTextView1.setText(mTextView1.getText().toString().substring(1));
+        } else {
+            mTextView1.setText("-" + mTextView1.getText().toString());
+        }
+    }
 
     // заготовка под обработку ошибок
     private void ifErrorOnOutput() {
@@ -298,8 +331,10 @@ public class MainActivity extends AppCompatActivity {
 
     // уменьшить размер текста
     private void exceedLength() {
-        if (mTextView1.getText().toString().length() > 10) {
-            mTextView1.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+        if (mTextView1.getText().toString().length() > 20) {
+            mTextView1.setTextSize(TypedValue.COMPLEX_UNIT_SP, 30);
+        } else {
+            mTextView1.setTextSize(TypedValue.COMPLEX_UNIT_SP, 50);
         }
     }
 }
