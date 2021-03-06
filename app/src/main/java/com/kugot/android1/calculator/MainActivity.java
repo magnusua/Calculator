@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView mTextView1;
     private TextView mTextView2;
 
-    private char OPERATION;
+    private char mOPERATION;
     private double mValue1 = Double.NaN;
     private double mValue2;
     private double mResult = 0;
