@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
     private final char MULTIPLICATION = '*';
     private final char DIVISION = '/';
     private final char EQU = '=';
-    private final char MODULUS = '%';
     private final char PLUSMINUS = '±';
 
     private Button mButton0;
@@ -47,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mButtonSquare;
     private Button mButtonP;
     private Button mButtonResult;
-    private Button mButtonClear;
+    private Button mButtonClear; //заготовка под кнопку очищения текстового поля с результатами при долгом нажатии
     private TextView mTextView1;
     private TextView mTextView2;
 
@@ -272,7 +271,6 @@ public class MainActivity extends AppCompatActivity {
             }
             case buttonPlusMinus: {
                 mTextView1.setText("-" + mTextView1.getText().toString());
-                ;
                 break;
             }
             case buttonSqrt: {

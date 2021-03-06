@@ -12,7 +12,6 @@
         android:id="@+id/buttonSqrt"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         android:layout_row="5"
         android:layout_column="1"
         android:text="@string/buttonSqrt"
@@ -22,7 +21,7 @@
         android:id="@+id/buttonLeftBracket"
         android:layout_row="0"
         android:layout_column="1"
-        android:layout_marginStart="2dp"
+        android:layout_marginStart="@dimen/paddingLeft"
         android:text="@string/buttonLeftBracket"
         android:textSize="@dimen/key_text_size" />
 
@@ -30,7 +29,7 @@
         android:id="@+id/buttonRightBracket"
         android:layout_row="0"
         android:layout_column="2"
-        android:layout_marginStart="2dp"
+        android:layout_marginStart="@dimen/paddingLeft"
         android:text="@string/buttonRightBracket"
         android:textSize="@dimen/key_text_size" />
 
@@ -38,86 +37,86 @@
         android:id="@+id/buttonDelimiter"
         android:layout_row="0"
         android:layout_column="3"
-        android:layout_marginStart="2dp"
+        android:layout_marginStart="@dimen/paddingLeft"
         android:text="@string/buttonDelimiter"
         android:textSize="@dimen/key_text_size" />
 
     <Button
         android:id="@+id/button7"
-        android:layout_marginStart="2dp"
+        android:layout_marginStart="@dimen/paddingLeft"
         android:text="@string/button7"
         android:textSize="@dimen/key_text_size" />
 
 
     <Button
         android:id="@+id/button8"
-        android:layout_marginStart="2dp"
+        android:layout_marginStart="@dimen/paddingLeft"
         android:text="@string/button8"
         android:textSize="@dimen/key_text_size" />
 
     <Button
         android:id="@+id/button9"
-        android:layout_marginStart="2dp"
+        android:layout_marginStart="@dimen/paddingLeft"
         android:text="@string/button9"
         android:textSize="@dimen/key_text_size" />
 
     <Button
         android:id="@+id/buttonMultiply"
-        android:layout_marginStart="2dp"
+        android:layout_marginStart="@dimen/paddingLeft"
         android:text="@string/buttonMultiply"
         android:textSize="@dimen/key_text_size" />
 
     <Button
         android:id="@+id/button4"
-        android:layout_marginStart="2dp"
+        android:layout_marginStart="@dimen/paddingLeft"
         android:text="@string/button4"
         android:textSize="@dimen/key_text_size" />
 
     <Button
         android:id="@+id/button5"
-        android:layout_marginStart="2dp"
+        android:layout_marginStart="@dimen/paddingLeft"
         android:text="@string/button5"
         android:textSize="@dimen/key_text_size" />
 
     <Button
         android:id="@+id/button6"
-        android:layout_marginStart="2dp"
+        android:layout_marginStart="@dimen/paddingLeft"
         android:text="@string/button6"
         android:textSize="@dimen/key_text_size" />
 
     <Button
         android:id="@+id/buttonMinus"
-        android:layout_marginStart="2dp"
+        android:layout_marginStart="@dimen/paddingLeft"
         android:text="@string/buttonMinus"
         android:textSize="@dimen/key_text_size" />
 
     <Button
         android:id="@+id/button1"
-        android:layout_marginStart="2dp"
+        android:layout_marginStart="@dimen/paddingLeft"
         android:text="@string/button1"
         android:textSize="@dimen/key_text_size" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_marginStart="2dp"
+        android:layout_marginStart="@dimen/paddingLeft"
         android:text="@string/button2"
         android:textSize="@dimen/key_text_size" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_marginStart="2dp"
+        android:layout_marginStart="@dimen/paddingLeft"
         android:text="@string/button3"
         android:textSize="@dimen/key_text_size" />
 
     <Button
         android:id="@+id/buttonPlus"
-        android:layout_marginStart="2dp"
+        android:layout_marginStart="@dimen/paddingLeft"
         android:text="@string/buttonPlus"
         android:textSize="@dimen/key_text_size" />
 
     <Button
         android:id="@+id/buttonPlusMinus"
-        android:layout_marginStart="2dp"
+        android:layout_marginStart="@dimen/paddingLeft"
         android:text="@string/PlusMinus"
         android:textSize="@dimen/key_text_size" />
 
@@ -125,7 +124,7 @@
         android:id="@+id/button0"
         android:layout_gravity="fill"
         android:layout_columnSpan="2"
-        android:layout_marginStart="2dp"
+        android:layout_marginStart="@dimen/paddingLeft"
         android:text="@string/button0"
         android:textSize="@dimen/key_text_size" />
 
@@ -133,7 +132,7 @@
         android:id="@+id/buttonSquare"
         android:layout_row="5"
         android:layout_column="0"
-        android:layout_marginStart="2dp"
+        android:layout_marginStart="@dimen/paddingLeft"
         android:text="@string/Square"
         android:textSize="@dimen/key_text_size" />
 
@@ -141,7 +140,7 @@
         android:id="@+id/buttonCE"
         android:layout_row="0"
         android:layout_column="0"
-        android:layout_marginStart="2dp"
+        android:layout_marginStart="@dimen/paddingLeft"
         android:text="@string/buttonCE"
         android:textSize="@dimen/key_text_size" />
 
@@ -149,7 +148,7 @@
         android:id="@+id/buttonP"
         android:layout_row="5"
         android:layout_column="2"
-        android:layout_marginStart="2dp"
+        android:layout_marginStart="@dimen/paddingLeft"
         android:text="@string/buttonPt"
         android:textSize="@dimen/key_text_size" />
 
@@ -159,7 +158,7 @@
         android:layout_rowSpan="2"
         android:layout_column="3"
         android:layout_gravity="fill"
-        android:layout_marginStart="2dp"
+        android:layout_marginStart="@dimen/paddingLeft"
         android:text="@string/buttonResult"
         android:textSize="@dimen/key_text_size" />
 
