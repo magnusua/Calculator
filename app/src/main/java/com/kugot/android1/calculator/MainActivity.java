@@ -10,8 +10,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Objects;
-
 import static com.kugot.android1.calculator.R.id.button0;
 import static com.kugot.android1.calculator.R.id.button1;
 import static com.kugot.android1.calculator.R.id.button2;
@@ -42,12 +40,6 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String MY_TAG = "Lifecycle";
     public static final String KEY_PREFIX = MainActivity.class.getCanonicalName();
-    private final char ADDITION = '+';
-    private final char SUBTRACTION = '-';
-    private final char MULTIPLICATION = '*';
-    private final char DIVISION = '/';
-    private final char EQU = '=';
-    private final char PLUSMINUS = '±';
 
     private Button mButton0;
     private Button mButton1;
@@ -75,9 +67,10 @@ public class MainActivity extends AppCompatActivity {
     private TextView mTextView1;
     private TextView mTextView2;
 
-    private char ACTION;
-    private double val1 = Double.NaN;
-    private double val2;
+    private char OPERATION;
+    private double mValue1 = Double.NaN;
+    private double mValue2;
+    private double mResult = 0;
 
 /*
 1. Напишите обработку каждой кнопки из макета калькулятора.
@@ -89,10 +82,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.activity_main);
-        Log.e(MY_TAG, "onCreate(): " + (savedInstanceState == null ? "first" : "next"));
+        Log.e(MY_TAG, "onCreate(): " + KEY_PREFIX + (savedInstanceState == null ? " first" : " next"));
         viewSetup();
         setNumericListener();
-        setOnClickListener();
+        setOperationClickListener();
 
     }
 
@@ -242,7 +235,7 @@ public class MainActivity extends AppCompatActivity {
         mButton9.setOnClickListener(keyNumericClickListener);
     }
 
-    private void setOnClickListener() {
+    private void setOperationClickListener() {
         mButtonResult.setOnClickListener(keyOperationClickListener);
         mButtonLeftBracket.setOnClickListener(keyOperationClickListener);
         mButtonRightBracket.setOnClickListener(keyOperationClickListener);
@@ -287,7 +280,6 @@ public class MainActivity extends AppCompatActivity {
             //далее необходимо будет обработать в дальнейшем
             case buttonCE: {
                 mTextView1.setText("");
-
                 break;
             }
             case buttonP: {
@@ -315,7 +307,7 @@ public class MainActivity extends AppCompatActivity {
 
     //plusMinus
     private void plusMinusButton() {
-        if (mTextView1.getText().length() > 0 && !Objects.equals(mTextView1.getText().charAt(0), '-')) {
+        if (mTextView1.getText().length() > 0 && (mTextView1.getText().charAt(0) == '-')) {
             mTextView1.setText(mTextView1.getText().toString().substring(1));
         } else {
             mTextView1.setText("-" + mTextView1.getText().toString());
