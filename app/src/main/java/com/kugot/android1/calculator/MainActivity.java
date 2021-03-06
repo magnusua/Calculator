@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+
 import static com.kugot.android1.calculator.R.id.button0;
 import static com.kugot.android1.calculator.R.id.button1;
 import static com.kugot.android1.calculator.R.id.button2;
@@ -40,6 +42,9 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String MY_TAG = "Lifecycle";
     public static final String KEY_PREFIX = MainActivity.class.getCanonicalName();
+    private static final String KEY_MAIN_SCREEN = "mainScreen";
+    private static final String KEY_MEMORY_SCREEN = "memoryScreen";
+    private static final String KEY_EQUATION = "equation";
 
     private Button mButton0;
     private Button mButton1;
@@ -64,14 +69,16 @@ public class MainActivity extends AppCompatActivity {
     private Button mButtonP;
     private Button mButtonResult;
     private Button mButtonClear; //заготовка под кнопку очищения текстового поля с результатами при долгом нажатии
-    private TextView mTextView1;
-    private TextView mTextView2;
+
+    private TextView mScreen;
+    private TextView mMemoryScreen;
+    String equation = "";
 
     private char mOPERATION;
     private double mValue1 = Double.NaN;
     private double mValue2;
     private double mResult = 0;
-
+    private ArrayList<String> equations = new ArrayList<>();
 /*
 1. Напишите обработку каждой кнопки из макета калькулятора.
 2. Создайте объект с данными и операциями калькулятора. Продумайте, каким образом будете
@@ -87,13 +94,6 @@ public class MainActivity extends AppCompatActivity {
         setNumericListener();
         setOperationClickListener();
 
-    }
-
-
-    private void addCharToParam(char key) {
-        ifErrorOnOutput();
-        exceedLength();
-        mTextView1.setText(mTextView1.getText().toString() + key);
     }
 
 
@@ -137,12 +137,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onSaveInstanceState(@NonNull Bundle state) {
         Log.e(MY_TAG, "onSaveInstanceState() ");
         super.onSaveInstanceState(state);
+        state.putString(KEY_MAIN_SCREEN, mScreen.getText().toString());
+        state.putString(KEY_MEMORY_SCREEN, mMemoryScreen.getText().toString());
+        state.putString(KEY_EQUATION, equation);
     }
 
     @Override
-    protected void onRestoreInstanceState(Bundle state) {
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
         Log.e(MY_TAG, "onRestoreInstanceState() ");
-        super.onRestoreInstanceState(state);
+        super.onRestoreInstanceState(savedInstanceState);
+        mScreen.setText(savedInstanceState.getString(KEY_MAIN_SCREEN));
+        mMemoryScreen.setText(savedInstanceState.getString(KEY_MEMORY_SCREEN));
+        equation = savedInstanceState.getString(KEY_EQUATION);
     }
 
 
@@ -170,8 +176,8 @@ public class MainActivity extends AppCompatActivity {
         mButtonSquare = findViewById(buttonSquare);
         mButtonP = findViewById(buttonP);
         mButtonCE = findViewById(buttonCE);
-        mTextView1 = findViewById(input);
-        mTextView2 = findViewById(output);
+        mScreen = findViewById(input);
+        mMemoryScreen = findViewById(output);
     }
 
     private final View.OnClickListener keyNumericClickListener = (view) -> {
@@ -277,9 +283,9 @@ public class MainActivity extends AppCompatActivity {
                 addCharToParam('-');
                 break;
             }
-            //далее необходимо будет обработать в дальнейшем
+            //необходимо будет обработать в дальнейшем
             case buttonCE: {
-                mTextView1.setText("");
+                mScreen.setText("");
                 break;
             }
             case buttonP: {
@@ -294,8 +300,14 @@ public class MainActivity extends AppCompatActivity {
                 addCharToParam('^');
                 break;
             }
+
             case buttonSquare: {
                 addCharToParam('²');
+                break;
+            }
+
+            case buttonResult: {
+                addCharToParam('=');
                 break;
             }
 
@@ -305,28 +317,41 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    private void addCharToParam(char key) {
+        ifErrorOnOutput();
+        setTextView1(key);
+        exceedLength();
+
+    }
+
+    private void setTextView1(char key) {
+        mScreen.setText(mScreen.getText().toString() + key);
+
+
+    }
+
     //plusMinus
     private void plusMinusButton() {
-        if (mTextView1.getText().length() > 0 && (mTextView1.getText().charAt(0) == '-')) {
-            mTextView1.setText(mTextView1.getText().toString().substring(1));
+        if (mScreen.getText().length() > 0 && (mScreen.getText().charAt(0) == '-')) {
+            mScreen.setText(mScreen.getText().toString().substring(1));
         } else {
-            mTextView1.setText("-" + mTextView1.getText().toString());
+            mScreen.setText("-" + mScreen.getText().toString());
         }
     }
 
     // заготовка под обработку ошибок
     private void ifErrorOnOutput() {
-        if (mTextView2.getText().toString().equals("Error")) {
-            mTextView2.setText("");
+        if (mMemoryScreen.getText().toString().equals("Error")) {
+            mMemoryScreen.setText("");
         }
     }
 
     // уменьшить размер текста
     private void exceedLength() {
-        if (mTextView1.getText().toString().length() > 20) {
-            mTextView1.setTextSize(TypedValue.COMPLEX_UNIT_SP, 30);
+        if (mScreen.getText().toString().length() > 20) {
+            mScreen.setTextSize(TypedValue.COMPLEX_UNIT_SP, 30);
         } else {
-            mTextView1.setTextSize(TypedValue.COMPLEX_UNIT_SP, 50);
+            mScreen.setTextSize(TypedValue.COMPLEX_UNIT_SP, 50);
         }
     }
 }
