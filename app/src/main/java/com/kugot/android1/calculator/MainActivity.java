@@ -10,8 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.ArrayList;
-
+import static com.kugot.android1.calculator.Calculator.evaluate;
 import static com.kugot.android1.calculator.R.id.button0;
 import static com.kugot.android1.calculator.R.id.button1;
 import static com.kugot.android1.calculator.R.id.button2;
@@ -68,17 +67,12 @@ public class MainActivity extends AppCompatActivity {
     private Button mButtonSquare;
     private Button mButtonP;
     private Button mButtonResult;
-    private Button mButtonClear; //заготовка под кнопку очищения текстового поля с результатами при долгом нажатии
+ //   private Button mButtonClear; //заготовка под кнопку очищения текстового поля с результатами при долгом нажатии
 
     private TextView mScreen;
     private TextView mMemoryScreen;
     String equation = "";
 
-    private char mOPERATION;
-    private double mValue1 = Double.NaN;
-    private double mValue2;
-    private double mResult = 0;
-    private ArrayList<String> equations = new ArrayList<>();
 /*
 1. Напишите обработку каждой кнопки из макета калькулятора.
 2. Создайте объект с данными и операциями калькулятора. Продумайте, каким образом будете
@@ -307,7 +301,9 @@ public class MainActivity extends AppCompatActivity {
             }
 
             case buttonResult: {
-                addCharToParam('=');
+                equation = evaluate(mScreen.getText().toString()).toString();
+                mMemoryScreen.setText(equation);
+//                addCharToParam('=');
                 break;
             }
 
