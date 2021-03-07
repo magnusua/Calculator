@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mButtonSquare;
     private Button mButtonP;
     private Button mButtonResult;
- //   private Button mButtonClear; //заготовка под кнопку очищения текстового поля с результатами при долгом нажатии
+    //   private Button mButtonClear; //заготовка под кнопку очищения текстового поля с результатами при долгом нажатии
 
     private TextView mScreen;
     private TextView mMemoryScreen;
@@ -303,7 +303,7 @@ public class MainActivity extends AppCompatActivity {
             case buttonResult: {
                 equation = evaluate(mScreen.getText().toString()).toString();
                 mMemoryScreen.setText(equation);
-//                addCharToParam('=');
+                mScreen.setText("");
                 break;
             }
 
@@ -321,8 +321,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setTextView1(char key) {
-        mScreen.setText(mScreen.getText().toString() + key);
-
+        if (key == '.' && mScreen.getText().length() == 0) {
+            mScreen.setText(mScreen.getText().toString() + 0 + key);
+        } else {
+            mScreen.setText(mScreen.getText().toString() + key);
+        }
 
     }
 
