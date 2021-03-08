@@ -1,28 +1,36 @@
 <resources>
     <string name="app_name">Calculator</string>
-    <string name="button1">1</string>
-    <string name="button2">2</string>
-    <string name="button3">3</string>
-    <string name="button4">4</string>
-    <string name="button5">5</string>
-    <string name="button6">6</string>
-    <string name="button7">7</string>
-    <string name="button8">8</string>
-    <string name="button9">9</string>
-    <string name="button0">0</string>
-    <string name="buttonPt">,</string>
-    <string name="buttonMinus">-</string>
-    <string name="buttonPlus">+</string>
-    <string name="buttonResult">=</string>
-    <string name="buttonMultiply">X</string>
-    <string name="PlusMinus">±</string>
-    <string name="buttonDelimiter">/</string>
-    <string name="buttonRightBracket">)</string>
-    <string name="buttonLeftBracket">(</string>
-    <string name="buttonSqrt">√</string>
-    <string name="Square">²</string>
-    <string name="History">Поле истории</string>
-    <string name="textViewMain">Поле для значений и решения</string>
-    <string name="buttonCE">CE</string>
+    <string name="caption_language">Language</string>
+    <string name="caption_DPI">DPI</string>
+    <string name="caption_orientation">Orientation</string>
+
+    <string name="Language">English</string>
+    <string name="orientation_portrait">Portrait</string>
+    <string name="orientation_landscape">Landscape</string>
+
+    <string name="button1" translatable="false">1</string>
+    <string name="button2" translatable="false">2</string>
+    <string name="button3" translatable="false">3</string>
+    <string name="button4" translatable="false">4</string>
+    <string name="button5" translatable="false">5</string>
+    <string name="button6" translatable="false">6</string>
+    <string name="button7" translatable="false">7</string>
+    <string name="button8" translatable="false">8</string>
+    <string name="button9" translatable="false">9</string>
+    <string name="button0" translatable="false">0</string>
+    <string name="buttonPt" translatable="false">,</string>
+    <string name="buttonMinus" translatable="false">-</string>
+    <string name="buttonPlus" translatable="false">+</string>
+    <string name="buttonResult" translatable="false">=</string>
+    <string name="buttonMultiply" translatable="false">X</string>
+    <string name="PlusMinus" translatable="false">±</string>
+    <string name="buttonDelimiter" translatable="false">/</string>
+    <string name="buttonRightBracket" translatable="false">)</string>
+    <string name="buttonLeftBracket" translatable="false">(</string>
+    <string name="buttonSqrt" translatable="false">√</string>
+    <string name="Square" translatable="false">²</string>
+    <string name="History">History</string>
+    <string name="textViewMain">Evaluation</string>
+    <string name="buttonCE" translatable="false">CE</string>
     <string name="displayoperationnumber">displayOperationNumber</string>
 </resources>
