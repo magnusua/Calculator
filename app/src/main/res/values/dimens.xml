@@ -10,4 +10,9 @@
     <dimen name="key_result_height">0dp</dimen>
     <dimen name="key_zero_width">0dp</dimen>
     <dimen name="marginBottomKeyBoard">124dp</dimen>
+    <dimen name="tvResult">25sp</dimen>
+    <dimen name="tvResilt">100dp</dimen>
+    <dimen name="tvResultPaddingRight">20dp</dimen>
+    <dimen name="tvSettingsCalcHeight">30dp</dimen>
+    <dimen name="tvSettingsCalcSize">20sp</dimen>
 </resources>
