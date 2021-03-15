@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="button_text">24sp</dimen>
+    <dimen name="key_text_size">24sp</dimen>
+    <dimen name="paddingLeft">2dp</dimen>
+    <dimen name="textViewSize">50sp</dimen>
+    <dimen name="key">30sp</dimen>
+    <dimen name="margin">3dp</dimen>
+    <dimen name="textSize">25sp</dimen>
+    <dimen name="key_result_height">0dp</dimen>
+    <dimen name="key_zero_width">0dp</dimen>
+    <dimen name="marginBottomKeyBoard">124dp</dimen>
+</resources>
