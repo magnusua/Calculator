@@ -6,11 +6,11 @@ import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import static com.kugot.android1.calculator.Calculator.evaluate;
 import static com.kugot.android1.calculator.R.id.button0;
 import static com.kugot.android1.calculator.R.id.button1;
 import static com.kugot.android1.calculator.R.id.button2;
@@ -279,31 +279,33 @@ public class MainActivity extends AppCompatActivity {
             }
             //необходимо будет обработать в дальнейшем
             case buttonCE: {
-                mScreen.setText("");
+                clear();
                 break;
             }
             case buttonP: {
                 addCharToParam('.');
                 break;
             }
-            case buttonPlusMinus: {
-                plusMinusButton();
-                break;
-            }
+            case buttonPlusMinus:
             case buttonSqrt: {
-                addCharToParam('^');
+                toasterText();
                 break;
             }
 
             case buttonSquare: {
-                addCharToParam('²');
+                addCharToParam('^');
                 break;
             }
 
             case buttonResult: {
-                equation = evaluate(mScreen.getText().toString()).toString();
-                mMemoryScreen.setText(equation);
-                mScreen.setText("");
+                if (mScreen.getText().toString().matches("\\d*[+-/*]?\\d+$")) {
+                    ifErrorOnOutput();
+                    equation = String.valueOf(Calculator.evaluate(mScreen.getText().toString()));
+                    mMemoryScreen.setText(equation);
+                } else {
+                    mMemoryScreen.setText("Error!");
+                }
+                clear();
                 break;
             }
 
@@ -352,5 +354,13 @@ public class MainActivity extends AppCompatActivity {
         } else {
             mScreen.setTextSize(TypedValue.COMPLEX_UNIT_SP, 50);
         }
+    }
+
+    private void clear() {
+        mScreen.setText("");
+    }
+
+    private void toasterText() {
+        Toast.makeText(this, "Эта функция пока не работает", Toast.LENGTH_LONG).show();
     }
 }

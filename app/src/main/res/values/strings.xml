@@ -28,7 +28,7 @@
     <string name="buttonRightBracket" translatable="false">)</string>
     <string name="buttonLeftBracket" translatable="false">(</string>
     <string name="buttonSqrt" translatable="false">√</string>
-    <string name="Square" translatable="false">²</string>
+    <string name="Square" translatable="false">^</string>
     <string name="History">History</string>
     <string name="textViewMain">Evaluation</string>
     <string name="buttonCE" translatable="false">CE</string>

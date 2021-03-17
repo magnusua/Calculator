@@ -139,6 +139,7 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonCE"
         style="@style/CalcKeySquare"
+        android:backgroundTint="#B1134A"
         android:layout_row="0"
         android:layout_column="0"
         android:text="@string/buttonCE"
@@ -159,6 +160,7 @@
         android:layout_rowSpan="2"
         android:layout_column="3"
         android:layout_gravity="fill"
+        android:backgroundTint="#121657"
         android:text="@string/buttonResult"
         android:textSize="@dimen/key_text_size" />
 
