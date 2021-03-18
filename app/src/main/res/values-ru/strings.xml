@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Калькулятор</string>
+    <string name="caption_language">Русский</string>
+    <string name="caption_DPI">Плотность экрана</string>
+    <string name="caption_orientation">Ориентация</string>
+
+    <string name="Language">Русский</string>
+    <string name="History">Поле истории</string>
+    <string name="textViewMain">Поле для значений и решения</string>
+    <string name="displayoperationnumber">Поле для операций</string>
+    <string name="orientation_portrait">Портретная</string>
+    <string name="orientation_landscape">Ландшафтная</string>
+    <string name="btnMoveToTest">Перейти в настройки</string>
+    <string name="loginName">Логин</string>
+    <string name="password">Пароль</string>
+    <string name="material_black">Черная</string>
+    <string name="material_red">Красная</string>
+    <string name="material_default">Тема по умолчанию</string>
+    <string name="material_blue">Синяя</string>
+    <string name="not_name">Некорректные символы.</string>
+    <string name="weak_password">Кривой пароль</string>
+    <string name="tvSettingsCalc">Настройки темы калькулятора:</string>
+    <string name="btnSave">Сохранить настройки</string>
+
+</resources>
